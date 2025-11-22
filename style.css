@@ -1,0 +1,259 @@
+/* --- Global Reset & Variables --- */
+:root {
+    --color-primary: #FF9400;
+    --color-dark: #1A1A1A;
+    --color-text: #E0E0E0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- BODY --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-text);
+    line-height: 1.6;
+    background-color: var(--color-dark);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* --- Main Container --- */
+.container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px;
+    background: #252525;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* --- Logo & Header --- */
+header {
+    margin-bottom: 30px;
+}
+
+.logo {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.tagline {
+    color: #888;
+    font-size: 0.85em;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+/* --- Content --- */
+.content {
+    margin: 30px 0;
+}
+
+.highlight {
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-top: 15px;
+    font-size: 1.1em;
+}
+
+/* --- Contact Form --- */
+.contact-form {
+    background: #333333;
+    padding: 35px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+}
+
+.contact-form h3 {
+    font-size: 1.6em;
+    color: var(--color-primary);
+    margin-bottom: 25px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #444;
+    color: white;
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #CCC;
+}
+
+/* --- CTA Button --- */
+.cta-button {
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+    font-size: 1.1em;
+    font-weight: 700;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.cta-button:hover {
+    background-color: #FFC107;
+}
+
+/* --- Footer --- */
+footer {
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    font-size: 0.9em;
+    color: #888;
+}
+
+.contact-info p {
+    margin-bottom: 8px;
+}
+
+/* ------------------------------------- */
+/* --- TABLET (601px - 1024px) --- */
+/* ------------------------------------- */
+@media (max-width: 1024px) {
+    body {
+        padding: 30px 15px;
+    }
+
+    .container {
+        padding: 40px 35px;
+    }
+
+    .logo {
+        max-width: 180px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .contact-form {
+        padding: 30px;
+    }
+
+    .contact-form h3 {
+        font-size: 1.5em;
+    }
+}
+
+/* ------------------------------------- */
+/* --- MOBILE (600px and below) --- */
+/* ------------------------------------- */
+@media (max-width: 600px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    .container {
+        padding: 25px 20px;
+        border-radius: 6px;
+    }
+
+    .logo {
+        max-width: 150px;
+    }
+
+    .tagline {
+        font-size: 0.75em;
+        letter-spacing: 0.5px;
+        padding: 0 10px;
+    }
+
+    h1 {
+        font-size: 1.4em;
+        padding: 0 10px;
+    }
+
+    .content {
+        margin: 20px 0;
+    }
+
+    .content p {
+        font-size: 0.95em;
+    }
+
+    .contact-form {
+        padding: 20px 15px;
+        margin-bottom: 20px;
+    }
+
+    .contact-form h3 {
+        font-size: 1.3em;
+        margin-bottom: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 12px;
+        font-size: 0.95em;
+    }
+
+    .cta-button {
+        font-size: 1em;
+        padding: 14px 20px;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+
+    .contact-info p {
+        font-size: 0.85em;
+    }
+}
+
+/* ------------------------------------- */
+/* --- SMALL MOBILE (400px and below) --- */
+/* ------------------------------------- */
+@media (max-width: 400px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    .logo {
+        max-width: 120px;
+    }
+
+    .tagline {
+        font-size: 0.7em;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    .contact-form h3 {
+        font-size: 1.1em;
+    }
+}

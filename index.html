@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAYLORR</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+        
+        <header>
+            <img src="logopng.png" alt="BAYLORR Logo" class="logo">
+            <div class="contact-info">
+                <p>Jurf IND. 2, Ajman, UAE</p>
+                <p>+971 50 42 39 39 07 | 📧 info@baylorr.com</p>
+            </div>
+            <p class="tagline">ALNAJM ALWATHEQ CONSTRUCTION EQUIPMENTS AND MACHINERY TRADING CO. L.L.C</p>
+            <h1>Construction & Industrial Equipments in the UAE</h1>
+        </header>
+
+        <section class="content">
+            <p>Our full product catalog and online inquiry system are currently under construction. In the meantime, our dedicated team is ready to serve your needs.</p>
+        </section>
+
+        <section class="contact-form">
+            <h3>Get a Price Quote Today</h3>
+            <form id="quote-form">
+                <input type="text" name="from_name" placeholder="Your Name" required>
+                <input type="text" name="company" placeholder="Company Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <textarea name="message" placeholder="What equipment are you interested in?"></textarea>
+                <button type="submit" class="cta-button">INQUIRE NOW</button>
+            </form>
+            <p id="form-status"></p>
+        </section>
+
+        <footer>
+            <div class="contact-info">
+                <p>📍 Jurf IND. 2, Ajman, UAE</p>
+                <p>📞 +971 50 42 39 39 07 | 📧 info@baylorr.com</p>
+            </div>
+            <p>&copy; 2025 BAYLORR ALNAJM ALWATHEQ. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        emailjs.init("6ZBbM1lq4IZsM_8BF");
+
+        document.getElementById('quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const btn = document.querySelector('.cta-button');
+            const status = document.getElementById('form-status');
+            
+            btn.textContent = 'SENDING...';
+            btn.disabled = true;
+
+            emailjs.sendForm('service_d7l4fb8', 'template_6f0npqj', this)
+                .then(function() {
+                    status.textContent = '✓ Message sent successfully! We will contact you soon.';
+                    status.style.color = '#4CAF50';
+                    btn.textContent = 'INQUIRE NOW';
+                    btn.disabled = false;
+                    document.getElementById('quote-form').reset();
+                }, function(error) {
+                    status.textContent = '✗ Failed to send. Please try again or contact us directly.';
+                    status.style.color = '#f44336';
+                    btn.textContent = 'INQUIRE NOW';
+                    btn.disabled = false;
+                    console.log('Error:', error);
+                });
+        });
+    </script>
+</body>
+</html>
